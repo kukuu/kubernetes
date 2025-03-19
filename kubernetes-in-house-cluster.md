@@ -132,3 +132,6 @@ pipeline {
 3. Configure Registry Credentials:
 
 i. Add your Docker registry credentials in Jenkins under Credentials > System > Global Credentials.
+
+
+**- Step 4: Run the Pipeline**
