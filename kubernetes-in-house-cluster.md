@@ -74,7 +74,7 @@ spec:
 
 3. Example k8s/service.yaml:
 
-   ```
+```
 apiVersion: v1
 kind: Service
 metadata:
@@ -86,7 +86,7 @@ spec:
     targetPort: 3000
   selector:
     app: my-app
-   ```
+```
 
 **- Step 3: Set Up Jenkins Pipeline**
 1. Install Jenkins Plugins:
