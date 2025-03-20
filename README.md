@@ -13,7 +13,7 @@ They are labelled to give  taxonomy to the pods. For referencing and managing. P
 Kubernetes uses Docker containers to deploy apps.
 
 2. Controllers
-
+ 
 Controllers manage Pods, and are packaged as replica sets to scale. They work on a set of rules
 
 3. Jobs
