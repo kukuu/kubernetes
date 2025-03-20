@@ -6,7 +6,7 @@ Normal recommendation is to have 3 (odd number to avert contention for resources
 ## Components
 
 1. Pod  
-
+ 
 Pods are wrappers, and provides abstraction for Kuubernetes on how to run  multiple containers to access CPU, Network resources to enable scaling. 
 They are labelled to give  taxonomy to the pods. For referencing and managing. Pods interract with containers during run time.
 
