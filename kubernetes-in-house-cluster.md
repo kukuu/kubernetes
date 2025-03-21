@@ -135,3 +135,93 @@ i. Add your Docker registry credentials in Jenkins under Credentials > System > 
 
 
 **- Step 4: Run the Pipeline**
+
+1. Trigger the Pipeline:
+
+i. Push your code to the repository to trigger the Jenkins pipeline.
+
+```
+git add .
+git commit -m "Trigger CI/CD pipeline"
+git push origin main
+
+```
+
+2. Monitor the Pipeline:
+
+i. Check the Jenkins console output for progress.
+
+ii. Example output:
+
+```
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] docker
+Successfully built 1234567890ab
+Successfully tagged my-registry/my-app:1
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Push to Registry)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] docker
+The push refers to repository [my-registry/my-app]
+...
+
+3. Verify Deployment:
+
+i. Check the deployment status in Kubernetes:
+
+```
+kubectl get pods
+kubectl get svc
+```
+  ii. Example output:
+
+```
+NAME                      READY   STATUS    RESTARTS   AGE
+my-app-1234567890-abcde   1/1     Running   0          1m
+my-app-1234567890-fghij   1/1     Running   0          1m
+my-app-1234567890-klmno   1/1     Running   0          1m
+NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+my-app       NodePort    10.100.200.30   <none>        80:30000/TCP   1m
+```
+**- Step 5: Set Up Monitoring** 
+
+i. Access Prometheus:
+
+ii. Port-forward the Prometheus service:
+
+```
+kubectl port-forward svc/prometheus-server 9090:9090
+```
+iii. Open http://localhost:9090 to view metrics.
+
+2. Access Grafana:
+
+i. Port-forward the Grafana service:
+
+```
+
+kubectl port-forward svc/grafana 3000:3000
+
+```
+ii. Open http://localhost:3000 and log in with the default credentials (admin/admin).
+
+iii. Add Prometheus as a data source and create dashboards to visualize metrics.
+
+-** Step 6: Access the Application**
+
+i.  Use the NodePort from the kubectl get svc output to access your application.
+
+ii.  Example:
+
+```
+http://<node-ip>:30000
+
+```
