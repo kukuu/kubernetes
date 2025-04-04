@@ -11,7 +11,7 @@ Pods are wrappers, and provides abstraction for Kuubernetes on how to run  multi
 They are labelled to give  taxonomy to the pods. For referencing and managing. Pods interract with containers during run time.
 
 Kubernetes uses Docker containers to deploy apps.
-
+ 
 2. Controllers
  
 Controllers manage Pods, and are packaged as replica sets to scale. They work on a set of rules
