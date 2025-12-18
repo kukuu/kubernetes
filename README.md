@@ -36,6 +36,8 @@ This is a exposure of pods, replicca sets and controllers on a port through the 
 
 Kubectl and Minikube are easily installed with popular packge managers like apt-get (Lynx), Chokolatey (Windows) and Homebrew (mac). 
 
+## K8 and KMS
+Kubernetes (K8s) provides automated container orchestration, enabling rapid scaling, self-healing deployments, and efficient resource utilization across distributed systems. AWS Key Management Service (KMS) delivers centralized encryption key management, ensuring data security at rest and in transit with granular access controls and compliance. Together, they enable resilient, scalable, and secure infrastructure that reduces operational overhead and strengthens data protection.
 
 ## Kubernetes in Production 
 
